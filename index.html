@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #18152A;
+  --bg-card: #1F1C32;
+  --bg-card-hover: #262340;
+  --border: rgba(255,255,255,0.07);
+  --border-hover: rgba(255,255,255,0.13);
+  --text: #EBE8E2;
+  --text-sec: #A09B94;
+  --text-dim: #635F5A;
+  --orange: #E8821A;
+  --orange-dim: rgba(232,130,26,0.12);
+  --violet: #8B6CC1;
+  --violet-dim: rgba(139,108,193,0.12);
+  --sage: #7BA88E;
+  --sage-dim: rgba(123,168,142,0.12);
+  --rose: #C4838A;
+  --rose-dim: rgba(196,131,138,0.12);
+  --lav: #9B8EB8;
+  --lav-dim: rgba(155,142,184,0.12);
+  --sky: #7BA0B8;
+  --sky-dim: rgba(123,160,184,0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #333 transparent; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg); color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── SELECTION ──────────────────────────────── */
+::selection { background: var(--orange); color: var(--bg); }
+
+/* ─── HEADER ─────────────────────────────────── */
+.header {
+  padding: 52px 0 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1A0A2E 0%, #2D1554 30%, #4A1A6B 55%, #7B2D4A 80%, #C45A28 100%);
+}
+.header::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(139,108,193,0.2) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 40%, rgba(232,130,26,0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+.header::after {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.header-mandala {
+  position: absolute; pointer-events: none; opacity: 0.07;
+}
+.header-mandala-r { right: -60px; top: 50%; transform: translateY(-50%); width: 320px; height: 320px; }
+.header-mandala-l { left: -80px; top: 50%; transform: translateY(-50%) scaleX(-1); width: 220px; height: 220px; }
+.header-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.header-eyebrow {
+  font-size: 11px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); margin-bottom: 16px;
+}
+.header-title {
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: clamp(44px, 8vw, 72px);
+  line-height: 1; margin-bottom: 12px; color: white;
+}
+.header-meta {
+  font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 300;
+  letter-spacing: 0.5px; margin-bottom: 20px;
+}
+.header-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.chip {
+  font-size: 12px; color: rgba(255,255,255,0.8); padding: 7px 16px;
+  border: 1px solid rgba(255,255,255,0.15); border-radius: 100px;
+  background: rgba(255,255,255,0.06); backdrop-filter: blur(8px);
+  font-weight: 400; transition: all 0.3s var(--ease);
+}
+.chip:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); }
+
+/* ─── NAV ────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(24,21,42,0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  display: flex; justify-content: center; gap: 0;
+  overflow-x: auto; scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav a {
+  font-size: 12px; font-weight: 400; letter-spacing: 0.5px;
+  padding: 16px 20px; color: var(--text-dim); text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: all 0.3s var(--ease); white-space: nowrap;
+}
+.nav a:hover { color: var(--text-sec); }
+.nav a.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* ─── PROGRESS ───────────────────────────────── */
+.progress {
+  display: flex; align-items: center; gap: 14px;
+  max-width: 720px; margin: 0 auto; padding: 14px 24px;
+}
+.progress-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); }
+.progress-track { flex: 1; height: 2px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--orange), var(--violet)); border-radius: 2px; transition: width 1s var(--ease); }
+.progress-pct { font-size: 12px; font-weight: 600; color: var(--orange); min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ─── SECTIONS ───────────────────────────────── */
+.sec {
+  max-width: 720px; margin: 0 auto; padding: 72px 24px;
+  scroll-margin-top: 56px;
+}
+.sec + .sec { border-top: 1px solid var(--border); }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s var(--ease); }
+.reveal.vis { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 80ms; }
+.reveal-d2 { transition-delay: 160ms; }
+.reveal-d3 { transition-delay: 240ms; }
+
+.sec-head { margin-bottom: 40px; }
+.sec-num { font-size: 11px; font-weight: 500; color: var(--violet); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+.sec-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: clamp(28px, 5vw, 40px); font-weight: 400; line-height: 1.15; color: var(--text); margin-bottom: 8px; }
+.sec-desc { font-size: 14px; color: var(--text-sec); line-height: 1.7; font-weight: 300; max-width: 560px; }
+
+/* ─── BENTO ──────────────────────────────────── */
+.bento { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.bento-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; transition: all 0.4s var(--ease); position: relative; overflow: hidden;
+}
+.bento-card:hover { background: var(--bg-card-hover); border-color: var(--border-hover); transform: translateY(-2px); }
+.bento-wide { grid-column: 1 / -1; }
+.card-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 10px; }
+.card-val { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: var(--text); margin-bottom: 4px; }
+.card-sub { font-size: 13px; color: var(--text-sec); line-height: 1.6; font-weight: 300; }
+
+/* ─── TIMELINE ───────────────────────────────── */
+.tl { display: flex; flex-direction: column; gap: 10px; }
+.tl-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 22px 24px; transition: all 0.4s var(--ease); position: relative;
+  border-left: 2px solid var(--border);
+}
+.tl-card:hover { background: var(--bg-card-hover); border-left-color: var(--orange); }
+.tl-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+.tl-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px; color: var(--text); }
+.tl-dates { font-size: 11px; font-weight: 500; color: var(--orange); letter-spacing: 0.3px; }
+.tl-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.tl-badge { font-size: 10px; font-weight: 500; padding: 4px 10px; border-radius: 100px; letter-spacing: 0.2px; }
+.badge-stay { background: var(--sage-dim); color: var(--sage); }
+.badge-who { background: var(--violet-dim); color: var(--violet); }
+.badge-alert { background: var(--rose-dim); color: var(--rose); }
+.tl-body { font-size: 13px; color: var(--text-sec); line-height: 1.7; font-weight: 300; }
+.tl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tl-tag { font-size: 11px; color: var(--text-dim); padding: 4px 10px; border: 1px solid var(--border); border-radius: 100px; }
+
+/* ─── URGENCY ────────────────────────────────── */
+.urgency {
+  background: var(--rose-dim); border: 1px solid rgba(196,131,138,0.15);
+  border-radius: var(--radius); padding: 20px 24px; margin-bottom: 28px;
+}
+.urgency h3 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: var(--rose); margin-bottom: 10px; }
+.urgency li { font-size: 13px; color: var(--text-sec); list-style: none; padding: 3px 0; font-weight: 300; }
+.urgency li::before { content: '→ '; color: var(--rose); opacity: 0.5; }
+
+/* ─── DATE CARDS ─────────────────────────────── */
+.date-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0 28px; }
+.date-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 18px; text-align: center; transition: all 0.3s var(--ease);
+}
+.date-card:hover { border-color: var(--border-hover); }
+.date-card .day { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; color: var(--orange); }
+.date-card .info { font-size: 11px; color: var(--text-dim); margin-top: 6px; font-weight: 300; }
+.date-card.rec { border-color: var(--violet); background: var(--violet-dim); }
+
+/* ─── CHECKLIST ──────────────────────────────── */
+.cl-group { margin-bottom: 32px; }
+.cl-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.cl-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+.cl-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px; color: var(--text); flex: 1; }
+.cl-count { font-size: 11px; font-weight: 600; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+.cl-list { display: flex; flex-direction: column; gap: 6px; }
+.cl-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 14px 18px; cursor: pointer; transition: all 0.3s var(--ease); user-select: none;
+}
+.cl-item:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+.cl-item.done { opacity: 0.45; }
+.cl-item.done:hover { opacity: 0.6; }
+.cl-chk {
+  width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--text-dim);
+  flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s var(--ease); font-size: 10px; color: transparent;
+}
+.cl-item:hover .cl-chk { border-color: var(--sage); }
+.cl-item.done .cl-chk { background: var(--sage); border-color: var(--sage); color: white; }
+.cl-text { font-size: 15px; color: var(--text); line-height: 1.5; font-weight: 400; flex: 1; }
+.cl-item.done .cl-text { text-decoration: line-through; text-decoration-color: var(--text-dim); color: var(--text-sec); }
+.cl-note { font-size: 11px; color: var(--text-dim); margin-top: 3px; font-weight: 300; font-style: italic; }
+.cl-badge { font-size: 9px; font-weight: 600; padding: 3px 8px; border-radius: 100px; flex-shrink: 0; margin-top: 3px; letter-spacing: 0.5px; text-transform: uppercase; }
+.b-urg { background: var(--rose-dim); color: var(--rose); }
+.b-book { background: var(--lav-dim); color: var(--lav); }
+.b-adm { background: var(--sky-dim); color: var(--sky); }
+
+/* ─── PEOPLE ─────────────────────────────────── */
+.people { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin-bottom: 28px; }
+.person {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 18px; text-align: center; transition: all 0.3s var(--ease);
+}
+.person:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+.person-emoji { font-size: 26px; margin-bottom: 8px; display: block; }
+.person-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 4px; }
+.person-loc { font-size: 11px; color: var(--text-dim); font-weight: 300; line-height: 1.4; }
+
+/* ─── PLACES ─────────────────────────────────── */
+.places { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+.place {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 22px; transition: all 0.3s var(--ease);
+}
+.place:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+.place-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; color: var(--text); margin-bottom: 2px; }
+.place-dist { font-size: 11px; color: var(--orange); font-weight: 500; margin-bottom: 8px; }
+.place-desc { font-size: 12px; color: var(--text-sec); line-height: 1.65; font-weight: 300; }
+.place-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.place-tag { font-size: 10px; color: var(--text-dim); padding: 3px 8px; border: 1px solid var(--border); border-radius: 100px; }
+
+/* ─── SHOP ───────────────────────────────────── */
+.shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+.shop {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 18px; transition: all 0.3s var(--ease);
+}
+.shop:hover { border-color: var(--border-hover); }
+.shop-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 2px; }
+.shop-tip { font-size: 11px; color: var(--text-dim); font-weight: 300; font-style: italic; margin-bottom: 8px; }
+.shop-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.shop-tag { font-size: 10px; color: var(--text-dim); padding: 3px 8px; border: 1px solid var(--border); border-radius: 100px; }
+
+/* ─── TABLE ──────────────────────────────────── */
+.stay-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 8px; }
+.stay-table th { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+.stay-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-sec); font-weight: 300; }
+.stay-table tr:hover td { color: var(--text); }
+.stay-table tr:last-child td { border-bottom: none; }
+
+/* ─── SUB-SECTION ────────────────────────────── */
+.sub { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px; color: var(--text); margin-bottom: 6px; }
+.sub-d { font-size: 13px; color: var(--text-sec); margin-bottom: 16px; font-weight: 300; line-height: 1.7; }
+
+/* ─── DIVIDER ────────────────────────────────── */
+.divider { height: 1px; background: var(--border); margin: 40px 0; }
+
+/* ─── TOAST ──────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(80px);
+  background: linear-gradient(135deg, var(--violet), var(--orange)); color: white; padding: 10px 24px; border-radius: 100px;
+  font-size: 13px; font-weight: 600; z-index: 999;
+  transition: transform 0.4s var(--ease);
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ─── BACK TOP ───────────────────────────────── */
+.btt {
+  position: fixed; bottom: 28px; right: 28px; z-index: 90;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--bg-card); border: 1px solid var(--border);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(12px); transition: all 0.3s var(--ease);
+  pointer-events: none; font-size: 16px; color: var(--text-dim);
+}
+.btt.vis { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.btt:hover { border-color: var(--violet); color: var(--violet); }
+
+/* ─── FOOTER ─────────────────────────────────── */
+footer { text-align: center; padding: 40px 24px; font-size: 11px; color: var(--text-dim); border-top: 1px solid var(--border); font-weight: 300; letter-spacing: 0.5px; }
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 600px) {
+  .header { padding: 36px 0 32px; }
+  .sec { padding: 48px 20px; }
+  .bento, .places, .shop-grid, .date-grid { grid-template-columns: 1fr; }
+  .bento-wide { grid-column: span 1; }
+  .tl-top { flex-direction: column; }
+  .nav a { padding: 14px 14px; font-size: 11px; }
+  .people { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <svg class="header-mandala header-mandala-r" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="160" cy="160" r="150" stroke="white" stroke-width="0.5" opacity="0.5"/>
+    <circle cx="160" cy="160" r="120" stroke="white" stroke-width="0.4" opacity="0.4" stroke-dasharray="3 5"/>
+    <circle cx="160" cy="160" r="90" stroke="white" stroke-width="0.5" opacity="0.5"/>
+    <circle cx="160" cy="160" r="60" stroke="white" stroke-width="0.4" opacity="0.4"/>
+    <circle cx="160" cy="160" r="30" stroke="white" stroke-width="0.5" opacity="0.6"/>
+    <circle cx="160" cy="160" r="8" fill="white" opacity="0.5"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.25"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.2" transform="rotate(36 160 160)"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.2" transform="rotate(72 160 160)"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.2" transform="rotate(108 160 160)"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.2" transform="rotate(144 160 160)"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.18" transform="rotate(180 160 160)"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.18" transform="rotate(216 160 160)"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.18" transform="rotate(252 160 160)"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.18" transform="rotate(288 160 160)"/>
+    <ellipse cx="160" cy="125" rx="14" ry="48" fill="white" opacity="0.18" transform="rotate(324 160 160)"/>
+    <ellipse cx="160" cy="160" rx="50" ry="14" fill="white" opacity="0.2"/>
+    <ellipse cx="160" cy="160" rx="50" ry="14" fill="white" opacity="0.15" transform="rotate(60 160 160)"/>
+    <ellipse cx="160" cy="160" rx="50" ry="14" fill="white" opacity="0.15" transform="rotate(120 160 160)"/>
+    <ellipse cx="160" cy="110" rx="18" ry="62" fill="none" stroke="white" stroke-width="0.6" opacity="0.15" transform="rotate(20 160 160)"/>
+    <ellipse cx="160" cy="110" rx="18" ry="62" fill="none" stroke="white" stroke-width="0.6" opacity="0.15" transform="rotate(-20 160 160)"/>
+    <ellipse cx="160" cy="110" rx="18" ry="62" fill="none" stroke="white" stroke-width="0.6" opacity="0.12" transform="rotate(56 160 160)"/>
+    <ellipse cx="160" cy="110" rx="18" ry="62" fill="none" stroke="white" stroke-width="0.6" opacity="0.12" transform="rotate(-56 160 160)"/>
+    <ellipse cx="160" cy="110" rx="18" ry="62" fill="none" stroke="white" stroke-width="0.6" opacity="0.1" transform="rotate(92 160 160)"/>
+    <ellipse cx="160" cy="110" rx="18" ry="62" fill="none" stroke="white" stroke-width="0.6" opacity="0.1" transform="rotate(-92 160 160)"/>
+  </svg>
+  <svg class="header-mandala header-mandala-l" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="160" cy="160" r="120" stroke="white" stroke-width="0.4" opacity="0.4"/>
+    <circle cx="160" cy="160" r="80" stroke="white" stroke-width="0.5" opacity="0.5"/>
+    <circle cx="160" cy="160" r="40" stroke="white" stroke-width="0.4" opacity="0.3"/>
+    <ellipse cx="160" cy="130" rx="12" ry="42" fill="white" opacity="0.2"/>
+    <ellipse cx="160" cy="130" rx="12" ry="42" fill="white" opacity="0.15" transform="rotate(45 160 160)"/>
+    <ellipse cx="160" cy="130" rx="12" ry="42" fill="white" opacity="0.15" transform="rotate(90 160 160)"/>
+    <ellipse cx="160" cy="130" rx="12" ry="42" fill="white" opacity="0.15" transform="rotate(135 160 160)"/>
+    <circle cx="160" cy="160" r="6" fill="white" opacity="0.4"/>
+  </svg>
+  <div class="header-inner">
+    <div class="header-eyebrow">Summer 2026</div>
+    <h1 class="header-title">India Trip</h1>
+    <p class="header-meta">July 26 – September 5 &nbsp;·&nbsp; Bangalore · Puttur · Dharmasthala · Pune</p>
+    <div class="header-chips">
+      <span class="chip">Raksha &amp; Inchara — 42 days</span>
+      <span class="chip">Raghu — 35 days (Jul 26 – Aug 29)</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <a href="#overview" class="active">Overview</a>
+  <a href="#itinerary">Itinerary</a>
+  <a href="#before">Before Leaving</a>
+  <a href="#packing">Packing</a>
+  <a href="#admin">Admin</a>
+  <a href="#family">Family</a>
+  <a href="#places">Places</a>
+  <a href="#shopping">Shopping</a>
+</nav>
+
+<div class="progress">
+  <span class="progress-label">Prep</span>
+  <div class="progress-track"><div class="progress-fill" id="gFill"></div></div>
+  <span class="progress-pct" id="gPct">0%</span>
+</div>
+
+<!-- ═══════════ OVERVIEW ═══════════ -->
+<div class="sec" id="overview">
+  <div class="sec-head reveal">
+    <div class="sec-num">01 — Overview</div>
+    <div class="sec-title">Trip at a Glance</div>
+  </div>
+  <div class="bento">
+    <div class="bento-card reveal"><div class="card-label">Travel dates</div><div class="card-val">Jul 26 – Sep 5</div><div class="card-sub">42 days for Raksha &amp; Inchara. Raghu: Jul 26 – Aug 29.</div></div>
+    <div class="bento-card reveal reveal-d1"><div class="card-label">Destinations</div><div class="card-val">4 Cities</div><div class="card-sub">Bangalore · Puttur · Dharmasthala · Pune</div></div>
+    <div class="bento-card reveal reveal-d2"><div class="card-label">Pooja ceremony</div><div class="card-val">Nagarbhavi</div><div class="card-sub">At Raghu's parents' house. Date TBD.</div></div>
+    <div class="bento-card reveal reveal-d3"><div class="card-label">Temples</div><div class="card-val">Kateel &amp; Kukke</div><div class="card-sub">Day trips from Puttur.</div></div>
+    <div class="bento-card bento-wide reveal"><div class="card-label">Family visits</div><div class="card-val">12+ People to Meet</div><div class="card-sub">Mohan mama, Dinesh mama, Doddamma, Guddi, Dodda Dodappa, Ajith doddappa, Anil Doddappa, Chikkamma, Shobha mami, Pallavi, and more.</div></div>
+    <div class="bento-card reveal"><div class="card-label">Accommodation</div><div class="card-val">Family Homes</div><div class="card-sub">Hotel only in Pune.</div></div>
+    <div class="bento-card reveal reveal-d1"><div class="card-label">Progress</div><div class="card-val" id="dPct">0%</div><div class="card-sub"><span id="dDone">0</span> of <span id="dTotal">0</span> tasks done</div></div>
+  </div>
+</div>
+
+<!-- ═══════════ ITINERARY ═══════════ -->
+<div class="sec" id="itinerary">
+  <div class="sec-head reveal">
+    <div class="sec-num">02 — Itinerary</div>
+    <div class="sec-title">The Journey</div>
+  </div>
+
+  <div class="reveal">
+    <div class="urgency"><h3>⚡ Book These Soon</h3><ul>
+      <li>Flights: Bangalore → Pune → Bangalore (Aug 9–10)</li>
+      <li>Hotel: Pune — 1 night</li>
+      <li>Pooja priest — confirm once date decided</li>
+    </ul></div>
+  </div>
+
+  <div class="reveal">
+    <div class="sub">Pooja Date Options</div>
+    <p class="sub-d">Nagarbhavi, Raghu's parents' house. Raghu must be present.</p>
+    <div class="date-grid">
+      <div class="date-card rec"><div class="day">Aug 3 (Sun)</div><div class="info">First Sunday after arrival. Settled in.</div></div>
+      <div class="date-card"><div class="day">Aug 24 (Sun)</div><div class="info">After returning from Puttur/Dharmasthala.</div></div>
+    </div>
+  </div>
+
+  <div class="tl">
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Landing in Bangalore</div><div class="tl-dates">Jul 27 – Aug 1</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">Arrive, settle in, recover from jet lag. Start banking, admin, shopping.</div><div class="tl-tags"><span class="tl-tag">Banking</span><span class="tl-tag">Aadhaar</span><span class="tl-tag">Eye doctor</span><span class="tl-tag">Shopping</span></div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Pooja Ceremony</div><div class="tl-dates">TBD — Aug 3 or Aug 24</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Nagarbhavi</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">At Raghu's parents' house. Book priest, arrange prasad/catering, WhatsApp invites.</div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Raghu's Friends Trip</div><div class="tl-dates">Aug 6 – 8</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Raghu away</span></div><div class="tl-body">Raksha &amp; Inchara in Bangalore — shopping, family visits, relaxing.</div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Pune Trip ✈️</div><div class="tl-dates">Aug 9 – 10 (2 days, 1 night)</div></div></div><div class="tl-badges"><span class="tl-badge badge-alert">Book hotel + flights</span><span class="tl-badge badge-who">Raksha &amp; Raghu</span></div><div class="tl-body">Fly BLR→PNQ (~1.5 hrs). Stay 1 night, fly back next day. Inchara stays with family in Bangalore.</div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Puttur — Extended Stay</div><div class="tl-dates">Aug 13 – 26 (2 weeks)</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">Solid 2-week stay at Puttur. Day trips to Kateel &amp; Kukke temples. Visit Anil Doddappa in Mangalore. Pooja at Puttur on Aug 15. Dharmasthala visit to Grandma's included (3 nights, ~70 km from Puttur).</div><div class="tl-tags"><span class="tl-tag">Kukke Subramanya</span><span class="tl-tag">Kateel</span><span class="tl-tag">Mangalore</span><span class="tl-tag">🙏 Puttur Pooja — Aug 15</span><span class="tl-tag">Dharmasthala — Grandma's</span></div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Back in Bangalore</div><div class="tl-dates">Aug 27 – 28</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">Final shopping, family visits, goodbyes before Raghu leaves.</div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Raghu Flies Home</div><div class="tl-dates">Aug 29</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Raghu departs</span></div><div class="tl-body">Family goodbyes. Raghu heads back to Canada.</div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Puttur Visit</div><div class="tl-dates">Aug 30 – Sep 1</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Raksha &amp; Inchara</span></div><div class="tl-body">A few more days with Puttur family.</div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Final Days in Bangalore</div><div class="tl-dates">Sep 2 – 4</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Raksha &amp; Inchara</span></div><div class="tl-body">Last family visits, final shopping, packing everything for the flight home.</div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Flying Home ✈️</div><div class="tl-dates">Sep 5</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Raksha &amp; Inchara</span></div><div class="tl-body">Fly home September 5. Trip complete!</div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="reveal">
+    <div class="sub">Accommodation</div>
+    <table class="stay-table">
+      <thead><tr><th>Destination</th><th>Stay</th><th>Book?</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Bangalore</td><td>Family home</td><td>—</td><td>Multiple stays</td></tr>
+        <tr><td>Puttur + Dharmasthala</td><td>Family homes</td><td>—</td><td>2-week stay · Kateel, Kukke &amp; Grandma's</td></tr>
+        <tr><td>Pune</td><td>Hotel</td><td>Book now</td><td>1 night · Koregaon Park area</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════ BEFORE LEAVING ═══════════ -->
+<div class="sec" id="before">
+  <div class="sec-head reveal">
+    <div class="sec-num">03 — Before Leaving</div>
+    <div class="sec-title">Canada Prep</div>
+    <p class="sec-desc">Everything to handle before boarding.</p>
+  </div>
+  <div class="reveal" id="cl-canada"></div>
+</div>
+
+<!-- ═══════════ PACKING ═══════════ -->
+<div class="sec" id="packing">
+  <div class="sec-head reveal">
+    <div class="sec-num">04 — Packing &amp; Gifts</div>
+    <div class="sec-title">What to Carry</div>
+    <p class="sec-desc">Gifts, documents, and essentials for the trip.</p>
+  </div>
+  <div class="reveal" id="cl-packing"></div>
+</div>
+
+<!-- ═══════════ ADMIN ═══════════ -->
+<div class="sec" id="admin">
+  <div class="sec-head reveal">
+    <div class="sec-num">05 — Admin</div>
+    <div class="sec-title">Tasks in India</div>
+    <p class="sec-desc">Banking, appointments, pooja planning, bookings.</p>
+  </div>
+  <div class="reveal" id="cl-admin"></div>
+</div>
+
+<!-- ═══════════ FAMILY ═══════════ -->
+<div class="sec" id="family">
+  <div class="sec-head reveal">
+    <div class="sec-num">06 — Family</div>
+    <div class="sec-title">People to Visit</div>
+    <p class="sec-desc">Across Bangalore &amp; Mangalore.</p>
+  </div>
+
+  <div class="reveal">
+    <div class="sub">Bangalore</div>
+    <div class="people">
+      <div class="person"><span class="person-emoji">👨‍👧</span><div class="person-name">Mohan Mama</div><div class="person-loc">Jalahalli</div></div>
+      <div class="person"><span class="person-emoji">👨‍👧</span><div class="person-name">Dinesh Mama</div><div class="person-loc">Abbigere</div></div>
+      <div class="person"><span class="person-emoji">👩</span><div class="person-name">Doddamma</div><div class="person-loc">Uttarahalli</div></div>
+      <div class="person"><span class="person-emoji">👩</span><div class="person-name">Guddi</div><div class="person-loc">Kengeri</div></div>
+      <div class="person"><span class="person-emoji">👨</span><div class="person-name">Dodda Dodappa</div><div class="person-loc">Kengeri</div></div>
+      <div class="person"><span class="person-emoji">👨</span><div class="person-name">Ajith Doddappa</div><div class="person-loc">Nagarbhavi</div></div>
+      <div class="person"><span class="person-emoji">👩</span><div class="person-name">Chikkamma</div><div class="person-loc">JP Nagar</div></div>
+      <div class="person"><span class="person-emoji">👩</span><div class="person-name">Shobha Mami</div><div class="person-loc">North Bangalore</div></div>
+      <div class="person"><span class="person-emoji">👩</span><div class="person-name">Pallavi</div><div class="person-loc">Bangalore · 🎁 kid gift</div></div>
+      <div class="person"><span class="person-emoji">🏠</span><div class="person-name">PRG House</div><div class="person-loc">Yelahanka</div></div>
+      <div class="person"><span class="person-emoji">🏠</span><div class="person-name">Madhu</div><div class="person-loc">Orchid Piccadilly, Thanisandra</div></div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="sub">Outside Bangalore</div>
+    <div class="people">
+      <div class="person"><span class="person-emoji">👨</span><div class="person-name">Anil Doddappa</div><div class="person-loc">Mangalore</div></div>
+      <div class="person"><span class="person-emoji">👵</span><div class="person-name">Grandma</div><div class="person-loc">Dharmasthala</div></div>
+    </div>
+  </div>
+
+  <div class="reveal" style="margin-top:2rem">
+    <div class="sub">Visit Schedule — By Area & Day</div>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:1.2rem">Grouped by distance so you're not criss-crossing the city. Sundays = breakfast → lunch → dinner circuit. Fridays & weekdays = dinner only.</p>
+
+    <div style="display:grid;gap:1rem">
+
+      <div class="tl-card" style="border-left:3px solid var(--orange)">
+        <div class="tl-name" style="color:var(--orange)">Sunday Jul 27 — North Bangalore Circuit</div>
+        <div class="tl-body" style="line-height:1.8">
+          🍳 <strong>Breakfast</strong> — Mohan Mama · <em>Jalahalli</em><br>
+          🍛 <strong>Lunch</strong> — Dinesh Mama · <em>Abbigere</em> (nearby)<br>
+          🍽️ <strong>Dinner</strong> — PRG House · <em>Yelahanka</em>
+        </div>
+      </div>
+
+      <div class="tl-card" style="border-left:3px solid var(--violet)">
+        <div class="tl-name" style="color:var(--violet)">Friday Aug 1 — Dinner</div>
+        <div class="tl-body">🍽️ <strong>Dinner</strong> — Madhu · <em>Thanisandra</em></div>
+      </div>
+
+      <div class="tl-card" style="border-left:3px solid var(--orange)">
+        <div class="tl-name" style="color:var(--orange)">Sunday Aug 3 — South/West Bangalore Circuit</div>
+        <div class="tl-body" style="line-height:1.8">
+          🍳 <strong>Breakfast</strong> — Guddi · <em>Kengeri</em><br>
+          🍛 <strong>Lunch</strong> — Dodda Dodappa · <em>Kengeri</em> (same area)<br>
+          🍽️ <strong>Dinner</strong> — Doddamma · <em>Uttarahalli</em> (nearby)
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-top:6px">⚠️ If pooja is on Aug 3, shift this to a weekday dinner split.</div>
+      </div>
+
+      <div class="tl-card" style="border-left:3px solid var(--violet)">
+        <div class="tl-name" style="color:var(--violet)">Weekday Aug 4 — Dinner</div>
+        <div class="tl-body">🍽️ <strong>Dinner</strong> — Chikkamma · <em>JP Nagar</em></div>
+      </div>
+
+      <div class="tl-card" style="border-left:3px solid var(--violet)">
+        <div class="tl-name" style="color:var(--violet)">Weekday Aug 5 — Dinner</div>
+        <div class="tl-body">🍽️ <strong>Dinner</strong> — Shobha Mami · <em>North Bangalore</em></div>
+      </div>
+
+      <div class="tl-card" style="border-left:3px solid var(--orange)">
+        <div class="tl-name" style="color:var(--orange)">Sunday Aug 24 — Central & Mixed Circuit</div>
+        <div class="tl-body" style="line-height:1.8">
+          🍳 <strong>Breakfast</strong> — Ajith Doddappa · <em>Nagarbhavi</em><br>
+          🍛 <strong>Lunch</strong> — Pallavi · <em>Bangalore</em> (🎁 bring kid gift)<br>
+          🍽️ <strong>Dinner</strong> — Chikkamma · <em>JP Nagar</em> (catch-up if missed earlier)
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-top:6px">⚠️ If pooja is on Aug 24, shift this to weekday dinners.</div>
+      </div>
+
+      <div class="tl-card" style="border-left:3px solid var(--violet)">
+        <div class="tl-name" style="color:var(--violet)">Friday Aug 28 — Dinner</div>
+        <div class="tl-body">🍽️ <strong>Dinner</strong> — Mohan Mama or Dinesh Mama · <em>North BLR</em> (farewell visit before Raghu leaves)</div>
+      </div>
+
+      <div class="tl-card" style="border-left:3px solid var(--sage)">
+        <div class="tl-name" style="color:var(--sage)">Sep 2–4 — Final Visits (Raksha & Inchara only)</div>
+        <div class="tl-body" style="line-height:1.8">
+          🍽️ <strong>Sep 2 Dinner</strong> — Any missed family members<br>
+          🍽️ <strong>Sep 3 Dinner</strong> — Final goodbyes round<br>
+          🍽️ <strong>Sep 4</strong> — Pack & prep for flight
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PLACES ═══════════ -->
+<div class="sec" id="places">
+  <div class="sec-head reveal">
+    <div class="sec-num">07 — Places</div>
+    <div class="sec-title">Where to Go</div>
+    <p class="sec-desc">Temples, shopping, sightseeing.</p>
+  </div>
+
+  <div class="reveal">
+    <div class="sub">Temples from Puttur</div>
+    <div class="places">
+      <div class="place"><div class="place-name">Kukke Subramanya</div><div class="place-dist">~50 km from Puttur</div><div class="place-desc">Famous temple in Western Ghats. Naga dosha pooja.</div><div class="place-tags"><span class="place-tag">Temple</span><span class="place-tag">Day trip</span></div></div>
+      <div class="place"><div class="place-name">Kateel Durgaparameshwari</div><div class="place-dist">~55 km from Puttur</div><div class="place-desc">Temple on an islet in River Nandini. Peaceful.</div><div class="place-tags"><span class="place-tag">Temple</span><span class="place-tag">Day trip</span></div></div>
+      <div class="place bento-wide" style="grid-column:1/-1"><div class="place-name">Dharmasthala</div><div class="place-dist">~70 km from Puttur</div><div class="place-desc">Grandma's place. Manjunatheshwara temple, Bahubali statue, Annadata free meals.</div><div class="place-tags"><span class="place-tag">Family</span><span class="place-tag">3 nights</span></div></div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="sub">Bangalore Shopping</div>
+    <div class="places">
+      <div class="place"><div class="place-name">Chickpet</div><div class="place-dist">Central</div><div class="place-desc">Sarees, langa blouses, dance jewellery. Go weekday AM.</div><div class="place-tags"><span class="place-tag">Shopping</span><span class="place-tag">Tailoring</span></div></div>
+      <div class="place"><div class="place-name">Commercial Street</div><div class="place-dist">Central</div><div class="place-desc">Clothes, accessories, street food. Iconic.</div><div class="place-tags"><span class="place-tag">Shopping</span><span class="place-tag">Food</span></div></div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="sub">Other Cities</div>
+    <div class="places">
+      <div class="place"><div class="place-name">Pune</div><div class="place-dist">1.5 hr flight</div><div class="place-desc">2-day trip Aug 9–10. Koregaon Park area.</div><div class="place-tags"><span class="place-tag">1 night</span><span class="place-tag">Book flights</span></div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="reveal">
+    <div class="sub">Getting Around</div>
+    <p class="sub-d" style="line-height:2.1;">
+      <strong>Bangalore → Puttur</strong> — 5–6 hr car / KSRTC bus<br>
+      <strong>Puttur → Dharmasthala</strong> — 70 km drive<br>
+      <strong>Puttur → Mangalore</strong> — 50 km<br>
+      <strong>Bangalore → Pune</strong> — 1.5 hr flight
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════ SHOPPING ═══════════ -->
+<div class="sec" id="shopping">
+  <div class="sec-head reveal">
+    <div class="sec-num">08 — Shopping</div>
+    <div class="sec-title">Buy in India</div>
+    <p class="sec-desc">Things to buy and bring back to Canada.</p>
+  </div>
+
+  <div class="reveal">
+    <div class="sub">Where to Shop</div>
+    <p class="sub-d">Plan Chickpet early — langa blouses need 3–5 days tailoring.</p>
+    <div class="shop-grid">
+      <div class="shop"><div class="shop-name">Chickpet</div><div class="shop-tip">Weekday morning</div><div class="shop-tags"><span class="shop-tag">Langa blouse</span><span class="shop-tag">Sarees</span><span class="shop-tag">Jewellery</span></div></div>
+      <div class="shop"><div class="shop-name">Rajajinagar</div><div class="shop-tip">Any time</div><div class="shop-tags"><span class="shop-tag">Bangles</span><span class="shop-tag">Gold earrings</span></div></div>
+      <div class="shop"><div class="shop-name">National Market</div><div class="shop-tip">Weekdays</div><div class="shop-tags"><span class="shop-tag">Sweatshirts</span><span class="shop-tag">Baggy jeans</span></div></div>
+      <div class="shop"><div class="shop-name">Local Stores</div><div class="shop-tip">Supermarkets</div><div class="shop-tags"><span class="shop-tag">Spices</span><span class="shop-tag">Ayurvedic</span><span class="shop-tag">Skincare</span></div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="reveal" id="cl-shopping"></div>
+</div>
+
+<div class="toast" id="toast">Done</div>
+<button class="btt" id="btt">↑</button>
+<footer>India 2026 · Mississauga → Bangalore → Canada</footer>
+
+<script>
+const DATA={canada:[{id:"ca_home",icon:"🏠",bg:"var(--orange-dim)",title:"Home Prep",tasks:[{id:"ca1",text:"Recharge security cameras"},{id:"ca2",text:"Recharge outdoor lights"},{id:"ca3",text:"Change water heater to Vacation Mode",badge:"urgent"},{id:"ca4",text:"Shut off gas supply",badge:"urgent"},{id:"ca5",text:"Keep gold/jewelry safely secured"},{id:"ca6",text:"Let Ron know about garden maintenance"},{id:"ca7",text:"Give spare key to Ravi"}]},{id:"ca_veh",icon:"🚗",bg:"var(--sky-dim)",title:"Vehicles & Services",tasks:[{id:"ca8",text:"Pause car insurance"},{id:"ca9",text:"Pause swimming lessons/classes"},{id:"ca10",text:"Disconnect electric connection (if applicable)"},{id:"ca11",text:"Book airport cab for 6 pieces of luggage",badge:"book"}]},{id:"ca_adm",icon:"📋",bg:"var(--sage-dim)",title:"Admin & Documents",tasks:[{id:"ca12",text:"Check all passports are valid through March 2027+",badge:"urgent"},{id:"ca13",text:"Register for Trusted Traveller Program"},{id:"ca14",text:"Check Manulife travel medical insurance coverage"},{id:"ca15",text:"Travel insurance — confirm coverage for 42-day trip"},{id:"ca16",text:"Wealthsimple — remove trusted place before travel"}]}],packing:[{id:"pk_gift",icon:"🎁",bg:"var(--lav-dim)",title:"Gifts to Carry",tasks:[{id:"pk1",text:"Costco: dry fruits, chocolates, chocolate biscuits",note:"Buy 1 week before travel"},{id:"pk2",text:"Bath & Body Works gifts — buy and bag",note:"Wrap in gift bags"},{id:"pk3",text:"Maple syrup — 2 bottles (500ml) + maple biscuits",note:"Bubble-wrap in checked bag"},{id:"pk4",text:"Biscoff cookies"},{id:"pk5",text:"Mixed seeds salad topper"},{id:"pk6",text:"Chocolates (extra box for gifts)"},{id:"pk7",text:"Soap from Dollarama"},{id:"pk8",text:"Essence lipstick"},{id:"pk9",text:"Purse from Dollarama"},{id:"pk10",text:"Perfumes from Dixie Outlet Mall"},{id:"pk11",text:"Extra clothes for parents — confirm sizes first"},{id:"pk12",text:"Salonpas patches + garlic powder",note:"Pack in checked bag"},{id:"pk13",text:"Gift for Pallavi's kid",note:"Buy before leaving Canada"}]},{id:"pk_doc",icon:"📄",bg:"var(--sage-dim)",title:"Identity & Documents",tasks:[{id:"pk14",text:"Aadhaar Card",badge:"urgent"},{id:"pk15",text:"PAN Card",badge:"urgent"},{id:"pk16",text:"Credit Cards"},{id:"pk17",text:"Bank Passbook(s)"},{id:"pk18",text:"Cheque Book(s)"}]},{id:"pk_priya",icon:"📁",bg:"var(--rose-dim)",title:"Priya Akka's Documents",tasks:[{id:"pk19",text:"Confirm which documents Priya Akka needs",badge:"urgent",note:"WhatsApp her for exact list"},{id:"pk20",text:"Collect, print, and pack all documents in one folder",badge:"urgent",note:"Keep in carry-on"}]}],admin:[{id:"ad_bank",icon:"🏦",bg:"var(--sage-dim)",title:"Banking",tasks:[{id:"ad1",text:"IDFC First Bank — close account",note:"Visit branch, withdraw balance, submit closure form"},{id:"ad2",text:"SBI — visit and transfer PPF",note:"Check nomination & balance"}]},{id:"ad_appt",icon:"📋",bg:"var(--sky-dim)",title:"Appointments",tasks:[{id:"ad3",text:"Aadhaar for Inchara — book appointment",badge:"urgent",note:"Try uidai.gov.in or visit Bangalore centre"},{id:"ad4",text:"Eye doctor appointment for Inchara",note:"First week. Get polaroid sunglasses after"}]},{id:"ad_pooja",icon:"🙏",bg:"var(--rose-dim)",title:"Pooja Ceremony",tasks:[{id:"ad5",text:"Decide pooja date (Aug 3 or Aug 24)",badge:"urgent",note:"At Raghu's parents' house in Nagarbhavi. Puttur pooja on Aug 15."},{id:"ad6",text:"Book priest (pandit)",badge:"urgent",note:"Good ones book out 3–4 weeks ahead"},{id:"ad7",text:"Arrange prasad / catering",note:"Home-cooked vs ordered; sweets from local mithai shop"},{id:"ad8",text:"Guest list & WhatsApp invitations",note:"Send once date is confirmed"}]},{id:"ad_book",icon:"✈️",bg:"var(--lav-dim)",title:"Flights & Hotels",tasks:[{id:"ad9",text:"Flights: Bangalore → Pune (Aug 9)",badge:"book"},{id:"ad10",text:"Flights: Pune → Bangalore (Aug 10)",badge:"book"},{id:"ad11",text:"Hotel: Pune — 1 night",badge:"book",note:"Koregaon Park / Hinjewadi area"}]}],shopping:[{id:"sh_cloth",icon:"👗",bg:"var(--lav-dim)",title:"Clothing & Accessories",tasks:[{id:"sh1",text:"Chickpet: Inchara's langa blouse",note:"Go early — may need 3–5 days tailoring"},{id:"sh2",text:"Chickpet: dance jewellery for Raksha & Inchara",note:"Confirm style with dance teacher"},{id:"sh3",text:"Rajajinagar: bangles for Inchara, gold earrings pickup"},{id:"sh4",text:"National Market: sweatshirts for family"},{id:"sh5",text:"Inner wear & camisole for Inchara, inner wear for Raksha"},{id:"sh6",text:"Home clothes for Raksha and Inchara"},{id:"sh7",text:"Baggy jeans (for self)"},{id:"sh8",text:"Polaroid sunglasses for Inchara",note:"After eye doctor visit"},{id:"sh9",text:"Golden shoes for Inchara"}]},{id:"sh_food",icon:"🫙",bg:"var(--orange-dim)",title:"Spices & Medicines",tasks:[{id:"sh10",text:"Saaru pudi"},{id:"sh11",text:"Sambaar pudi"},{id:"sh12",text:"Hing, Gun powder, Chutney pudi, Gojju, Kai saasive, Menaskayi powders",note:"Airtight zip-lock bags in checked luggage"},{id:"sh13",text:"Ayurvedic medicines: Jeeragarishta, Dashamoola, Seetopaladi",note:"Keep original packaging for customs"},{id:"sh14",text:"Inchara deworming medicine",note:"Get prescription from doctor"}]},{id:"sh_beauty",icon:"✨",bg:"var(--sage-dim)",title:"Beauty & Skincare",tasks:[{id:"sh15",text:"Sunbless sunscreen for Raksha"},{id:"sh16",text:"Facewash & moisturizer for Raksha"},{id:"sh17",text:"Kaajal"}]},{id:"sh_home",icon:"🏠",bg:"var(--sky-dim)",title:"Home & Misc",tasks:[{id:"sh18",text:"Steel pans",note:"Heavy — factor into luggage plan"},{id:"sh19",text:"Buddha decor"},{id:"sh20",text:"Inchara tiffin box"},{id:"sh21",text:"Stickers for Raksha & Inchara"},{id:"sh22",text:"Raaga Shruthi Box",note:"Music stores in Bangalore"}]}]};
+
+const SK='india-trip-2026-v2';
+let done=new Set(JSON.parse(localStorage.getItem(SK)||'[]'));
+const save=()=>localStorage.setItem(SK,JSON.stringify([...done]));
+const allT=()=>Object.values(DATA).flatMap(c=>c.flatMap(g=>g.tasks));
+
+function upd(){
+  const a=allT(),t=a.length,d=[...done].filter(id=>a.some(x=>x.id===id)).length,p=t?Math.round(d/t*100):0;
+  document.getElementById('gFill').style.width=p+'%';
+  document.getElementById('gPct').textContent=p+'%';
+  document.getElementById('dPct').textContent=p+'%';
+  document.getElementById('dDone').textContent=d;
+  document.getElementById('dTotal').textContent=t;
+}
+
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800);}
+
+function toggle(id){
+  done.has(id)?done.delete(id):(done.add(id),toast('✓ Done'));
+  const el=document.getElementById('t-'+id);
+  if(el)el.classList.toggle('done',done.has(id));
+  const g=el?.closest('.cl-group');
+  if(g){const items=g.querySelectorAll('.cl-item'),d=[...items].filter(i=>i.classList.contains('done')).length;g.querySelector('.cl-count').textContent=d+'/'+items.length;}
+  save();upd();
+}
+
+function renderCL(cid,cats){
+  const c=document.getElementById(cid);c.innerHTML='';
+  cats.forEach(cat=>{
+    const g=document.createElement('div');g.className='cl-group';
+    const d=cat.tasks.filter(t=>done.has(t.id)).length;
+    g.innerHTML=`<div class="cl-head"><div class="cl-icon" style="background:${cat.bg}">${cat.icon}</div><div class="cl-title">${cat.title}</div><div class="cl-count">${d}/${cat.tasks.length}</div></div><div class="cl-list"></div>`;
+    const list=g.querySelector('.cl-list');
+    cat.tasks.forEach(t=>{
+      const isDone=done.has(t.id);
+      const bc=t.badge==='urgent'?'b-urg':t.badge==='book'?'b-book':'b-adm';
+      const bl=t.badge==='urgent'?'Urgent':t.badge==='book'?'Book':'';
+      const item=document.createElement('div');
+      item.className='cl-item'+(isDone?' done':'');item.id='t-'+t.id;
+      item.innerHTML=`<div class="cl-chk">✓</div><div style="flex:1;min-width:0"><div class="cl-text">${t.text}</div>${t.note?'<div class="cl-note">'+t.note+'</div>':''}</div>${bl?'<span class="cl-badge '+bc+'">'+bl+'</span>':''}`;
+      item.addEventListener('click',()=>toggle(t.id));
+      list.appendChild(item);
+    });
+    c.appendChild(g);
+  });
+}
+
+// scroll spy
+const secs=document.querySelectorAll('.sec');
+const links=document.querySelectorAll('.nav a');
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+id));}});},{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>spy.observe(s));
+
+// nav clicks
+links.forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});});});
+
+// back to top
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('vis',scrollY>500);},{passive:true});
+btt.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+// reveal
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}});},{rootMargin:'0px 0px -40px 0px',threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+renderCL('cl-canada',DATA.canada);
+renderCL('cl-packing',DATA.packing);
+renderCL('cl-admin',DATA.admin);
+renderCL('cl-shopping',DATA.shopping);
+upd();
+</script>
+</body>
+</html>
