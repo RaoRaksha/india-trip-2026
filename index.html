@@ -167,6 +167,12 @@ body {
 .tl-body { font-size: 13px; color: var(--text-sec); line-height: 1.7; font-weight: 300; }
 .tl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .tl-tag { font-size: 11px; color: var(--text-dim); padding: 4px 10px; border: 1px solid var(--border); border-radius: 100px; }
+.tl-card.tbd { border-left: 2px dashed var(--text-dim); opacity: 0.65; }
+.tl-card.tbd:hover { opacity: 1; }
+.badge-tbd { background: rgba(255,255,255,0.05); color: var(--text-dim); border: 1px dashed var(--text-dim); }
+.person.tbd { opacity: 0.5; border-style: dashed; }
+.person.tbd:hover { opacity: 0.8; }
+.tbd-label { font-size: 10px; color: var(--text-dim); font-style: italic; }
 
 /* ─── URGENCY ────────────────────────────────── */
 .urgency {
@@ -402,26 +408,56 @@ footer { text-align: center; padding: 40px 24px; font-size: 11px; color: var(--t
   </div>
 
   <div class="tl">
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Landing in Bangalore</div><div class="tl-dates">Jul 27 – Aug 3</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">Arrive, settle in, recover from jet lag. Admin, banking, Aadhaar, eye doctor. Family visits — lunches and dinners.</div><div class="tl-tags"><span class="tl-tag">Banking</span><span class="tl-tag">Aadhaar</span><span class="tl-tag">Eye doctor</span><span class="tl-tag">Family visits</span></div></div>
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Bangalore → Puttur 🚗</div><div class="tl-dates">Aug 4 morning</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Ola car</span><span class="tl-badge badge-who">Raksha, Inchara &amp; Parents</span></div><div class="tl-body">Leave Bangalore morning of Aug 4 with Raksha's parents by Ola car to Puttur. Raghu stays in Bangalore.</div></div>
+    <div style="font-size:13px;color:var(--violet);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.5rem">Phase 1 — Bangalore · Jul 27 – Aug 3</div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Sunday Jul 27 — Arrival 🛬</div><div class="tl-dates">Jul 27</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">Arrive Bangalore. Rest &amp; recover from jet lag.</div></div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Monday Jul 28 — Family Visits</div><div class="tl-dates">Jul 28</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body" style="line-height:1.8">🍛 <strong>Lunch</strong> — Udaya Doddamma<br>🍽️ <strong>Evening</strong> — Meet Guddi<br>🍽️ <strong>Dinner</strong> — Ajith Doddappa</div></div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Wednesday Jul 29 — Chickpet &amp; Eye Doctor</div><div class="tl-dates">Jul 29</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Split</span></div><div class="tl-body" style="line-height:1.8">🛍️ <strong>Chickpet</strong> — Raksha &amp; mother-in-law<br>👁️ <strong>Eye doctor</strong> — Raghu &amp; father-in-law take Inchara</div></div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Thursday Jul 30 — Admin &amp; Shopping</div><div class="tl-dates">Jul 30</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Bangalore</span></div><div class="tl-body">📋 Admin activities. Malleshwaram / Nagarbhavi shopping.</div></div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Friday Jul 31 — Admin &amp; Shopping</div><div class="tl-dates">Jul 31</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Bangalore</span></div><div class="tl-body">📋 Admin activities. Malleshwaram / Nagarbhavi shopping.</div></div>
+
+    <div class="tl-card tbd reveal"><div class="tl-top"><div><div class="tl-name">Saturday Aug 1 — Photo Shoot</div><div class="tl-dates">Aug 1</div></div></div><div class="tl-badges"><span class="tl-badge badge-tbd">Tentative</span><span class="tl-badge badge-who">Inchara</span></div><div class="tl-body">📸 Inchara photo shoot · <em>Confirm closer to date</em></div></div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Sunday Aug 2 — North Bangalore</div><div class="tl-dates">Aug 2</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body" style="line-height:1.8">🍛 <strong>Lunch</strong> — Mohan Mama · <em>Jalahalli</em><br>🍽️ <strong>Dinner</strong> — Dinesh Mama · <em>Abbigere</em></div></div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Monday Aug 3 — Admin</div><div class="tl-dates">Aug 3</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Bangalore</span></div><div class="tl-body">📋 Aadhaar and remaining admin activities.</div></div>
+
+    <div style="font-size:13px;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:1.5rem;margin-bottom:0.5rem">Phase 2 — Puttur &amp; Dharmasthala · Aug 4 – 16</div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Tuesday Aug 4 — Bangalore → Puttur 🚗</div><div class="tl-dates">Aug 4</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Ola car</span><span class="tl-badge badge-who">Raksha, Inchara &amp; Parents</span></div><div class="tl-body">Leave Bangalore morning with Raksha's parents by Ola car to Puttur. Raghu stays in Bangalore.</div></div>
+
     <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Puttur — Early Days</div><div class="tl-dates">Aug 4 – 6</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Raksha &amp; Inchara</span></div><div class="tl-body">Settle in at Puttur. Family time, local visits.</div></div>
+
     <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Raghu's Friends Trip</div><div class="tl-dates">Aug 7 – 9</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Raghu away</span></div><div class="tl-body">Raksha &amp; Inchara continue in Puttur. Raghu on friends trip.</div></div>
+
     <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Raghu → Dharmasthala</div><div class="tl-dates">Aug 10 night bus</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Overnight bus</span><span class="tl-badge badge-who">Raghu</span></div><div class="tl-body">Raghu takes overnight bus from Bangalore to Dharmasthala after friends trip.</div></div>
     <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Dharmasthala Trip</div><div class="tl-dates">Aug 10 – 11</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Grandma's house</span><span class="tl-badge badge-who">Raksha, Inchara, Amma &amp; Brother</span></div><div class="tl-body">Raksha, Inchara, Raksha's mom and brother leave to Dharmasthala on Aug 10. Stay Aug 11 at Grandma's — Manjunatheshwara temple, Bahubali statue. Return to Puttur night of Aug 11.</div></div>
     <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Raghu's Parents Arrive</div><div class="tl-dates">Aug 13 (by car)</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Parents join</span></div><div class="tl-body">Raghu's parents drive to Puttur to join the family.</div></div>
     <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Kateel &amp; Guru Narasimha</div><div class="tl-dates">Aug 14</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Day trip</span><span class="tl-badge badge-who">Full Family + Parents</span></div><div class="tl-body">Visit Kateel Durgaparameshwari temple and Guru Narasimha temple with Raghu's parents.</div></div>
     <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Puttur Pooja 🙏</div><div class="tl-dates">Aug 15</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Puttur</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">Pooja ceremony at Puttur.</div></div>
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Puttur → Bangalore 🚗</div><div class="tl-dates">Aug 16</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Car · 5–6 hrs</span><span class="tl-badge badge-who">Full Family + Parents</span></div><div class="tl-body">Drive back to Bangalore with Raghu's parents by car.</div></div>
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Back in Bangalore</div><div class="tl-dates">Aug 16 – 28</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">Family visits, shopping. Pooja ceremony Aug 21. Udupi for Ammamma's varshantika Aug 22–23.</div><div class="tl-tags"><span class="tl-tag">Family visits</span><span class="tl-tag">Shopping</span><span class="tl-tag">🙏 Pooja — Aug 21</span><span class="tl-tag">Udupi — Aug 22–23</span></div></div>
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Pooja Ceremony 🙏</div><div class="tl-dates">Aug 21 (Friday)</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Nagarbhavi</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">At Raghu's parents' house. Priest booked, prasad/catering arranged, guests invited via WhatsApp.</div></div>
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Udupi — Ammamma's Varshantika</div><div class="tl-dates">Aug 22 night – Aug 24 morning</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Train</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">Leave Bangalore Aug 22 night by train to Udupi. Attend Ammamma's varshantika on Aug 23. Leave Udupi Aug 23 night by train, arrive Bangalore Aug 24 morning.</div></div>
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Sunday Aug 16 — Puttur → Bangalore 🚗</div><div class="tl-dates">Aug 16</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Car · 5–6 hrs</span><span class="tl-badge badge-who">Full Family + Parents</span></div><div class="tl-body">Drive back to Bangalore with Raghu's parents by car.</div></div>
 
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Family Visits</div><div class="tl-dates">Aug 28 (Thursday)</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body">Udaya Doddamma's place for lunch. Meet Guddi in the evening. Ajith Doddappa's house for dinner.</div></div>
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Pune Trip ✈️ (Tentative)</div><div class="tl-dates">TBD</div></div></div><div class="tl-badges"><span class="tl-badge badge-alert">Tentative</span><span class="tl-badge badge-who">Raksha &amp; Raghu</span></div><div class="tl-body">Fly BLR→PNQ (~1.5 hrs). Stay 1 night, fly back next day. Inchara stays with family in Bangalore. Dates to be confirmed.</div></div>
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Raghu Flies Home</div><div class="tl-dates">Aug 29</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Raghu departs</span></div><div class="tl-body">Family goodbyes. Raghu heads back to Canada.</div></div>
+    <div style="font-size:13px;color:var(--orange);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:1.5rem;margin-bottom:0.5rem">Phase 3 — Back in Bangalore · Aug 16 – 28</div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Friday Aug 21 — Pooja Ceremony 🙏</div><div class="tl-dates">Aug 21</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Nagarbhavi</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body" style="line-height:1.8">🙏 <strong>Pooja Ceremony</strong> at Raghu's parents' house<br>🍽️ <strong>Evening</strong> — Family gathering</div></div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Saturday Aug 22 – Sunday Aug 23 — Udupi 🚂</div><div class="tl-dates">Aug 22–23</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Train</span><span class="tl-badge badge-who">Full Family</span></div><div class="tl-body" style="line-height:1.8">🚂 Leave Bangalore Aug 22 (Sat) night by train<br>🙏 Attend Ammamma's varshantika Aug 23 (Sun)<br>🚂 Leave Udupi Aug 23 night, arrive Bangalore Aug 24 morning</div></div>
+
+    <div class="tl-card tbd reveal"><div class="tl-top"><div><div class="tl-name">Pune Trip ✈️</div><div class="tl-dates">TBD</div></div></div><div class="tl-badges"><span class="tl-badge badge-tbd">Tentative</span><span class="tl-badge badge-who">Raksha &amp; Raghu</span></div><div class="tl-body">Fly BLR→PNQ (~1.5 hrs). Stay 1 night, fly back next day. Inchara stays with family in Bangalore. Dates to be confirmed.</div></div>
+
+    <div style="font-size:13px;color:var(--rose);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:1.5rem;margin-bottom:0.5rem">Phase 4 — Departure &amp; Puttur Round 2 · Aug 29 – Sep 5</div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Friday Aug 29 — Raghu Flies Home ✈️</div><div class="tl-dates">Aug 29</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Raghu departs</span></div><div class="tl-body">Family goodbyes. Raghu heads back to Canada.</div></div>
+
     <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Puttur — Round 2</div><div class="tl-dates">Aug 29 – Sep 2</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Raksha &amp; Inchara</span></div><div class="tl-body">Same day as Raghu's departure, head to Puttur for final family time. Leave Puttur night of Sep 2.</div></div>
+
     <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Final Days in Bangalore</div><div class="tl-dates">Sep 3 – 4</div></div></div><div class="tl-badges"><span class="tl-badge badge-stay">Family home</span><span class="tl-badge badge-who">Raksha &amp; Inchara</span></div><div class="tl-body">Arrive morning Sep 3. Last-minute shopping, final packing for the flight home.</div></div>
-    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Flying Home ✈️</div><div class="tl-dates">Sep 5</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Raksha &amp; Inchara</span></div><div class="tl-body">Fly home September 5. Trip complete!</div></div>
+
+    <div class="tl-card reveal"><div class="tl-top"><div><div class="tl-name">Friday Sep 5 — Flying Home ✈️</div><div class="tl-dates">Sep 5</div></div></div><div class="tl-badges"><span class="tl-badge badge-who">Raksha &amp; Inchara</span></div><div class="tl-body">Fly home September 5. Trip complete!</div></div>
   </div>
 
   <div class="divider"></div>
@@ -495,13 +531,13 @@ footer { text-align: center; padding: 40px 24px; font-size: 11px; color: var(--t
       <div class="person"><span class="person-emoji">👨‍👧</span><div class="person-name">Dinesh Mama</div><div class="person-loc">Abbigere</div></div>
       <div class="person"><span class="person-emoji">👩</span><div class="person-name">Doddamma</div><div class="person-loc">Uttarahalli</div></div>
       <div class="person"><span class="person-emoji">👩</span><div class="person-name">Guddi</div><div class="person-loc">Kengeri</div></div>
-      <div class="person"><span class="person-emoji">👨</span><div class="person-name">Dodda Dodappa</div><div class="person-loc">Kengeri</div></div>
+      <div class="person tbd"><span class="person-emoji">👨</span><div class="person-name">Dodda Dodappa</div><div class="person-loc">Kengeri</div><div class="tbd-label">Date TBD</div></div>
       <div class="person"><span class="person-emoji">👨</span><div class="person-name">Ajith Doddappa</div><div class="person-loc">Nagarbhavi</div></div>
-      <div class="person"><span class="person-emoji">👩</span><div class="person-name">Shobha Mami</div><div class="person-loc">North Bangalore</div></div>
-      <div class="person"><span class="person-emoji">👩</span><div class="person-name">Navya Akka</div><div class="person-loc">Bangalore</div></div>
-      <div class="person"><span class="person-emoji">👩</span><div class="person-name">Anusha</div><div class="person-loc">Bangalore</div></div>
-      <div class="person"><span class="person-emoji">👩</span><div class="person-name">Pallavi</div><div class="person-loc">Bangalore · 🎁 kid gift</div></div>
-      <div class="person"><span class="person-emoji">🏠</span><div class="person-name">Madhu</div><div class="person-loc">Orchid Piccadilly, Thanisandra</div></div>
+      <div class="person tbd"><span class="person-emoji">👩</span><div class="person-name">Shobha Mami</div><div class="person-loc">North Bangalore</div><div class="tbd-label">Date TBD</div></div>
+      <div class="person tbd"><span class="person-emoji">👩</span><div class="person-name">Navya Akka</div><div class="person-loc">Bangalore</div><div class="tbd-label">Date TBD</div></div>
+      <div class="person tbd"><span class="person-emoji">👩</span><div class="person-name">Anusha</div><div class="person-loc">Bangalore</div><div class="tbd-label">Date TBD</div></div>
+      <div class="person tbd"><span class="person-emoji">👩</span><div class="person-name">Pallavi</div><div class="person-loc">Bangalore · 🎁 kid gift</div><div class="tbd-label">Date TBD</div></div>
+      <div class="person tbd"><span class="person-emoji">🏠</span><div class="person-name">Madhu</div><div class="person-loc">Thanisandra</div><div class="tbd-label">Date TBD</div></div>
     </div>
   </div>
 
@@ -513,96 +549,6 @@ footer { text-align: center; padding: 40px 24px; font-size: 11px; color: var(--t
     </div>
   </div>
 
-  <div class="reveal" style="margin-top:2rem">
-    <div class="sub">Visit Schedule — By Area &amp; Day</div>
-    <p style="color:var(--muted);font-size:14px;margin-bottom:1.2rem">Grouped by distance so you're not criss-crossing the city. Sundays = breakfast → lunch → dinner circuit. Weekdays = dinner only.</p>
-
-    <div style="display:grid;gap:1rem">
-
-      <div style="font-size:13px;color:var(--violet);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:-0.5rem">Week 1 — Jul 29 – Aug 3 (All in Bangalore)</div>
-      <div style="font-size:13px;color:var(--muted);margin-bottom:0.5rem">Jul 27–28: Rest &amp; recover from jet lag</div>
-
-      <div class="tl-card" style="border-left:3px solid var(--violet)">
-        <div class="tl-name" style="color:var(--violet)">Wednesday Jul 29 — Chickpet &amp; Eye Doctor</div>
-        <div class="tl-body" style="line-height:1.8">
-          🛍️ <strong>Chickpet</strong> — Raksha &amp; mother-in-law<br>
-          👁️ <strong>Eye doctor</strong> — Raghu &amp; father-in-law take Inchara
-        </div>
-      </div>
-
-      <div class="tl-card" style="border-left:3px solid var(--violet)">
-        <div class="tl-name" style="color:var(--violet)">Wednesday Jul 30 — Admin &amp; Shopping</div>
-        <div class="tl-body">📋 Admin activities. Malleshwaram / Nagarbhavi shopping.</div>
-      </div>
-
-      <div class="tl-card" style="border-left:3px solid var(--violet)">
-        <div class="tl-name" style="color:var(--violet)">Thursday Jul 31 — Admin &amp; Shopping</div>
-        <div class="tl-body">📋 Admin activities. Malleshwaram / Nagarbhavi shopping.</div>
-      </div>
-
-      <div class="tl-card" style="border-left:3px solid var(--violet)">
-        <div class="tl-name" style="color:var(--violet)">Saturday Aug 1 — Photo Shoot (Tentative)</div>
-        <div class="tl-body">📸 Inchara photo shoot · <em>Tentative — confirm closer to date</em></div>
-      </div>
-
-      <div class="tl-card" style="border-left:3px solid var(--orange)">
-        <div class="tl-name" style="color:var(--orange)">Sunday Aug 2 — North Bangalore</div>
-        <div class="tl-body" style="line-height:1.8">
-          🍛 <strong>Lunch</strong> — Mohan Mama · <em>Jalahalli</em><br>
-          🍽️ <strong>Dinner</strong> — Dinesh Mama · <em>Abbigere</em> (nearby)
-        </div>
-      </div>
-
-      <div class="tl-card" style="border-left:3px solid var(--orange)">
-        <div class="tl-name" style="color:var(--orange)">Monday Aug 3 — Admin</div>
-        <div class="tl-body">📋 Aadhaar and remaining admin activities.</div>
-      </div>
-
-      <div class="tl-card" style="border-left:3px solid var(--orange)">
-        <div class="tl-name" style="color:var(--orange)">Tuesday Aug 4 — Puttur</div>
-        <div class="tl-body">🚗 Leave morning with Raksha's parents by Ola car to Puttur.</div>
-      </div>
-
-      <div style="font-size:13px;color:var(--violet);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:0.5rem;margin-bottom:-0.5rem">After Puttur — Aug 16 – 28 (All in Bangalore)</div>
-
-      <div class="tl-card" style="border-left:3px solid var(--orange)">
-        <div class="tl-name" style="color:var(--orange)">Aug 21 (Fri) — Pooja Day</div>
-        <div class="tl-body" style="line-height:1.8">
-          🙏 <strong>Pooja Ceremony</strong> — Nagarbhavi<br>
-          🍽️ <strong>Evening</strong> — Family gathering at Raghu's parents' house
-        </div>
-      </div>
-
-      <div class="tl-card" style="border-left:3px solid var(--orange)">
-        <div class="tl-name" style="color:var(--orange)">Aug 22 – 23 — Udupi (Ammamma's Varshantika)</div>
-        <div class="tl-body" style="line-height:1.8">
-          🚂 Leave Bangalore Aug 22 (Sat) night by train<br>
-          🙏 Attend Ammamma's varshantika Aug 23 (Sun)<br>
-          🚂 Leave Udupi Aug 23 night by train, arrive Bangalore Aug 24 morning
-        </div>
-      </div>
-
-      <div class="tl-card" style="border-left:3px solid var(--orange)">
-        <div class="tl-name" style="color:var(--orange)">Aug 28 (Thu) — Family Visits</div>
-        <div class="tl-body" style="line-height:1.8">
-          🍛 <strong>Lunch</strong> — Udaya Doddamma<br>
-          🍽️ <strong>Evening</strong> — Meet Guddi<br>
-          🍽️ <strong>Dinner</strong> — Ajith Doddappa
-        </div>
-      </div>
-
-      <div style="font-size:13px;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:0.5rem;margin-bottom:-0.5rem">Final — Sep 3 – 4 (Raksha &amp; Inchara only)</div>
-
-      <div class="tl-card" style="border-left:3px solid var(--sage)">
-        <div class="tl-name" style="color:var(--sage)">Sep 3 – 4 — Final Visits</div>
-        <div class="tl-body" style="line-height:1.8">
-          🍽️ <strong>Sep 3 Dinner</strong> — Any missed family members<br>
-          🍽️ <strong>Sep 4</strong> — Pack &amp; prep for flight
-        </div>
-      </div>
-
-    </div>
-  </div>
 </div>
 
 <!-- ═══════════ CHECKLISTS ═══════════ -->
